@@ -26,11 +26,15 @@ namespace ModuleA
 
         public void Initialize()
         {
-            IRegion region = _regionManager.Regions[RegionNames.ToolbarRegion];
+            //IRegion region = _regionManager.Regions[RegionNames.ToolbarRegion];
 
-            region.Add(_container.Resolve(typeof (ToolbarView)));
+            //region.Add(_container.Resolve(typeof (ToolbarView)));
 
-            _regionManager.RegisterViewWithRegion(RegionNames.ContentRegion, typeof (ContentView));
+            //_regionManager.RegisterViewWithRegion(RegionNames.ContentRegion, typeof (ContentView));
+
+            _container.RegisterType<ToolbarView>();
+            _container.RegisterType<ContentView>();
+            _container.RegisterType<IContentViewViewModel, ContentViewViewModel>();
         }
     }
 }
