@@ -1,0 +1,12 @@
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\PrimsDemoApplication.Infrastructure\bin\Debug\PrimsDemoApplication.Infrastructure.dll
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\PrimsDemoApplication.Infrastructure\bin\Debug\PrimsDemoApplication.Infrastructure.pdb
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\PrimsDemoApplication.Infrastructure\obj\Debug\PrimsDemoApplication.Infrastructure.Properties.Resources.resources
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\PrimsDemoApplication.Infrastructure\obj\Debug\PrimsDemoApplication.Infrastructure.csproj.GenerateResource.Cache
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\PrimsDemoApplication.Infrastructure\obj\Debug\PrimsDemoApplication.Infrastructure.dll
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\PrimsDemoApplication.Infrastructure\obj\Debug\PrimsDemoApplication.Infrastructure.pdb
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\PrimsDemoApplication.Infrastructure\bin\Debug\PrimsDemoApplication.Infrastructure.dll
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\PrimsDemoApplication.Infrastructure\bin\Debug\PrimsDemoApplication.Infrastructure.pdb
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\PrimsDemoApplication.Infrastructure\obj\Debug\PrimsDemoApplication.Infrastructure.Properties.Resources.resources
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\PrimsDemoApplication.Infrastructure\obj\Debug\PrimsDemoApplication.Infrastructure.csproj.GenerateResource.Cache
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\PrimsDemoApplication.Infrastructure\obj\Debug\PrimsDemoApplication.Infrastructure.dll
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\PrimsDemoApplication.Infrastructure\obj\Debug\PrimsDemoApplication.Infrastructure.pdb

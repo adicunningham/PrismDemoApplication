@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{755E3214-5472-4859-8CD3-47E010CCBB0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{6A0845AF-8486-4BA2-A2B6-E308813D2CA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismDemoApplication", "Src\PrismDemoApplication\PrismDemoApplication.csproj", "{B7A3B0BF-A3C3-408F-83FE-71FF2470CE02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimsDemoApplication.Infrastructure", "Src\PrimsDemoApplication.Infrastructure\PrimsDemoApplication.Infrastructure.csproj", "{32D01EA7-959E-4F8A-B634-CA2E3B3424DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleA", "Src\Modules\ModuleAModule\ModuleA.csproj", "{DB4C8A4E-066D-4142-AA3D-1C7EAE9E2C33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7A3B0BF-A3C3-408F-83FE-71FF2470CE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7A3B0BF-A3C3-408F-83FE-71FF2470CE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7A3B0BF-A3C3-408F-83FE-71FF2470CE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7A3B0BF-A3C3-408F-83FE-71FF2470CE02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D01EA7-959E-4F8A-B634-CA2E3B3424DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D01EA7-959E-4F8A-B634-CA2E3B3424DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D01EA7-959E-4F8A-B634-CA2E3B3424DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D01EA7-959E-4F8A-B634-CA2E3B3424DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB4C8A4E-066D-4142-AA3D-1C7EAE9E2C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB4C8A4E-066D-4142-AA3D-1C7EAE9E2C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB4C8A4E-066D-4142-AA3D-1C7EAE9E2C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB4C8A4E-066D-4142-AA3D-1C7EAE9E2C33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB4C8A4E-066D-4142-AA3D-1C7EAE9E2C33} = {755E3214-5472-4859-8CD3-47E010CCBB0C}
+	EndGlobalSection
+EndGlobal

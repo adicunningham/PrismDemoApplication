@@ -1,0 +1,13 @@
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\bin\Debug\ModuleAModule.dll
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\bin\Debug\ModuleAModule.pdb
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\obj\Debug\ModuleAModule.csprojResolveAssemblyReference.cache
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\obj\Debug\ContentView.baml
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\obj\Debug\ToobarView.baml
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\obj\Debug\ContentView.g.cs
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\obj\Debug\ToobarView.g.cs
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\obj\Debug\ModuleAModule_MarkupCompile.cache
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\obj\Debug\ModuleAModule.g.resources
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\obj\Debug\ModuleAModule.Properties.Resources.resources
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\obj\Debug\ModuleAModule.csproj.GenerateResource.Cache
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\obj\Debug\ModuleAModule.dll
+C:\Users\acunningham\Documents\Visual Studio 2012\Projects\PrismDemoApplication\Src\Modules\ModuleAModule\obj\Debug\ModuleAModule.pdb
