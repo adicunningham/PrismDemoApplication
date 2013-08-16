@@ -9,7 +9,7 @@ using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.Unity;
-using Module;
+//using Module;
 using PrimsDemoApplication.Infrastructure;
 
 namespace PrismDemoApplication
@@ -29,11 +29,22 @@ namespace PrismDemoApplication
             App.Current.MainWindow.Show();
         }
 
+        //protected override IModuleCatalog CreateModuleCatalog()
+        //{
+        //    ModuleCatalog catalog = new ModuleCatalog();
+        //    catalog.AddModule(typeof (ModuleAModule));
+        //    return catalog;
+        //}
+
         protected override IModuleCatalog CreateModuleCatalog()
         {
-            ModuleCatalog catalog = new ModuleCatalog();
-            catalog.AddModule(typeof (ModuleAModule));
-            return catalog;
+            // Configure Module Catalog via directory.
+            //return new DirectoryModuleCatalog() {ModulePath = @".\Modules"};
+
+            // Configure Module Catalog from Xaml
+            return Microsoft.Practices.Prism.Modularity.ModuleCatalog.CreateFromXaml(new Uri("/PrismDemoApplication;component/Resources/XamlCatalog.xaml", UriKind.Relative));
+        
+            //return new ConfigurationModuleCatalog();
         }
 
         protected override RegionAdapterMappings ConfigureRegionAdapterMappings()

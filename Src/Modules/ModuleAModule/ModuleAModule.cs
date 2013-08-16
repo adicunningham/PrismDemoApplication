@@ -9,13 +9,15 @@ using Microsoft.Practices.Unity;
 using ModuleA;
 using PrimsDemoApplication.Infrastructure;
 
-namespace Module
+namespace ModuleA
 {
+    //[Module(ModuleName = "ModuleA", OnDemand = true)]
     public class ModuleAModule : IModule
     {
         private IUnityContainer _container;
         private IRegionManager _regionManager;
 
+        
         public ModuleAModule(IUnityContainer container, IRegionManager regionManager)
         {
             _container = container;

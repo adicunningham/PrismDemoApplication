@@ -83,7 +83,7 @@ namespace ModuleA {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ModuleAModule;component/toolbarview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ModuleA;component/toolbarview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\ToolbarView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

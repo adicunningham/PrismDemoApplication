@@ -102,21 +102,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\XamlCatalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
     <Page Include="Shell.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modules\ModuleAModule\ModuleA.csproj">
-      <Project>{db4c8a4e-066d-4142-aa3d-1c7eae9e2c33}</Project>
-      <Name>ModuleA</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PrimsDemoApplication.Infrastructure\PrimsDemoApplication.Infrastructure.csproj">
       <Project>{32d01ea7-959e-4f8a-b634-ca2e3b3424dc}</Project>
       <Name>PrimsDemoApplication.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
