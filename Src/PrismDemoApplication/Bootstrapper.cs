@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using Microsoft.Practices.Prism.Modularity;
+using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.Unity;
 using Module;
+using PrimsDemoApplication.Infrastructure;
 
 namespace PrismDemoApplication
 {
@@ -31,6 +34,13 @@ namespace PrismDemoApplication
             ModuleCatalog catalog = new ModuleCatalog();
             catalog.AddModule(typeof (ModuleAModule));
             return catalog;
+        }
+
+        protected override RegionAdapterMappings ConfigureRegionAdapterMappings()
+        {
+            RegionAdapterMappings mappings = base.ConfigureRegionAdapterMappings();
+            mappings.RegisterMapping(typeof (StackPanel), Container.Resolve <StackPanelRegionAdapter>());
+            return mappings;
         }
     }
 }

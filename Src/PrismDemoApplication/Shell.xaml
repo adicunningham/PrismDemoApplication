@@ -6,7 +6,7 @@
         Title="Shell" Height="300" Width="300">
     <Grid>
         <DockPanel LastChildFill="true">
-            <ItemsControl DockPanel.Dock="Top" prism:RegionManager.RegionName="{x:Static inf:RegionNames.ToolbarRegion}"/>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" prism:RegionManager.RegionName="{x:Static inf:RegionNames.ToolbarRegion}"/>
             <ContentControl  Name="ContentRegion" prism:RegionManager.RegionName="{x:Static inf:RegionNames.ContentRegion}"/>
         </DockPanel>
         
