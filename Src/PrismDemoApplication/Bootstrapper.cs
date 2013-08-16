@@ -42,9 +42,9 @@ namespace PrismDemoApplication
             //return new DirectoryModuleCatalog() {ModulePath = @".\Modules"};
 
             // Configure Module Catalog from Xaml
-            return Microsoft.Practices.Prism.Modularity.ModuleCatalog.CreateFromXaml(new Uri("/PrismDemoApplication;component/Resources/XamlCatalog.xaml", UriKind.Relative));
+            //return Microsoft.Practices.Prism.Modularity.ModuleCatalog.CreateFromXaml(new Uri("/PrismDemoApplication;component/Resources/XamlCatalog.xaml", UriKind.Relative));
         
-            //return new ConfigurationModuleCatalog();
+            return new ConfigurationModuleCatalog();
         }
 
         protected override RegionAdapterMappings ConfigureRegionAdapterMappings()

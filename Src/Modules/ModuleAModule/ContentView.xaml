@@ -17,6 +17,6 @@
     </UserControl.Resources>
 
     <Grid Background="LightCoral">
-        <TextBlock Text="Content" Style="{StaticResource MyStyle}"/>
+        <TextBlock Text="{Binding Message}" Style="{StaticResource MyStyle}"/>
     </Grid>
 </UserControl>

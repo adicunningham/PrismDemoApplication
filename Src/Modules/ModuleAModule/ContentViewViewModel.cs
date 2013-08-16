@@ -15,6 +15,11 @@ namespace ModuleA
             View = view;
             View.ViewModel = this;
         }
-    
+
+
+        public string Message
+        {
+            get; set;
+        }
     }
 }
