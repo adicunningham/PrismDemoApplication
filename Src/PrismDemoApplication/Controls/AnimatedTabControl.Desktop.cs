@@ -14,12 +14,13 @@
 // organization, product, domain name, email address, logo, person,
 // places, or events is intended or should be inferred.
 //===================================================================================
+
 using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 
-namespace StockTraderRI.Controls
+namespace PrismDemoApplication.Controls
 {
     /// <summary>
     /// Custom Tab control with animations.

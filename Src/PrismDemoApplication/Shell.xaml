@@ -3,11 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://www.codeplex.com/prism"
         xmlns:inf="clr-namespace:PrimsDemoApplication.Infrastructure;assembly=PrimsDemoApplication.Infrastructure"
-        Title="Shell" Height="300" Width="300">
+        xmlns:controls="clr-namespace:PrismDemoApplication.Controls"
+        Title="Shell" Height="600" Width="600">
     <Grid>
         <DockPanel LastChildFill="true">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" prism:RegionManager.RegionName="{x:Static inf:RegionNames.ToolbarRegion}"/>
-            <ContentControl Name="StatusBarRegion" prism:RegionManager.RegionName="{x:Static inf:RegionNames.StatusBarRegion}"/>
+            <ContentControl Name="StatusBarRegion" DockPanel.Dock="Bottom"  prism:RegionManager.RegionName="{x:Static inf:RegionNames.StatusBarRegion}"/>
             <TabControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.ContentRegion}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <TabControl.ItemContainerStyle>
                     <Style TargetType="TabItem">
@@ -16,6 +17,26 @@
                 </TabControl.ItemContainerStyle>
                 
             </TabControl>
+            <!--<Grid x:Name="ContentGrid" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <controls:AnimatedTabControl
+                    x:Name="PositionBuySellTab"
+                    SelectedIndex="0" 
+                    VerticalAlignment="Stretch"
+                    ItemContainerStyle="{StaticResource ShellTabItemStyle}" 
+                    Background="BurlyWood" 
+                    prism:RegionManager.RegionName="{x:Static inf:RegionNames.ContentRegion}"
+                    AutomationProperties.AutomationId="PositionSummaryTab" />
+            </Grid>-->
+
+
         </DockPanel>
         
     </Grid>

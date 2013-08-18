@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Events;
 using PeopleModule.Views;
 using PrimsDemoApplication.Infrastructure;
 using PrismDemoApplication.Business;
@@ -13,6 +14,8 @@ namespace PeopleModule.ViewModel
 {
     public class PersonViewModel : ViewModelBase, IPersonViewModel
     {
+        private IEventAggregator _eventAggregator;
+
         public string ViewName
         {
             get
@@ -21,23 +24,28 @@ namespace PeopleModule.ViewModel
             }
         }
 
-        public DelegateCommand<Person> SaveCommand { get; set; }
+        public DelegateCommand SaveCommand { get; set; }
 
-        public PersonViewModel(IPersonView view)
+        public PersonViewModel(IPersonView view, IEventAggregator eventAggregator)
             : base(view)
         {
 
-            SaveCommand = new DelegateCommand<Person>(Save, CanSave);
+            SaveCommand = new DelegateCommand(Save, CanSave);
+
+            GlobalCommands.SaveAllCommand.RegisterCommand(SaveCommand);
+
+            _eventAggregator = eventAggregator;
         }
 
-        private bool CanSave(Person value)
+        private bool CanSave()
         {
-            return Person.Error == null;
+            return Person != null && Person.Error == null;
         }
 
-        private void Save(Person value)
+        private void Save()
         {
-            Person.LastUpdated = DateTime.Now.AddYears(Convert.ToInt32((value.Age)));
+            Person.LastUpdated = DateTime.Now;
+            _eventAggregator.GetEvent<PersonUpdatedEvent>().Publish(string.Format("{0}, {1}", Person.FirstName, Person.LastName));
         }
 
         private Person _person;
