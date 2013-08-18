@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{05C61CE7-5B6F-4197-9415-EB76892053CB}</ProjectGuid>
+    <ProjectGuid>{3CDC6DF3-498F-4616-B6E0-C162B3EC0FB9}</ProjectGuid>
     <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ToolBarModule</RootNamespace>
-    <AssemblyName>ToolBarModule</AssemblyName>
+    <RootNamespace>ServiceModule</RootNamespace>
+    <AssemblyName>ServiceModule</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,11 +34,11 @@
   <ItemGroup>
     <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+      <HintPath>..\..\..\Lib\Microsoft.Practices.Prism.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+      <HintPath>..\..\..\Lib\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -55,6 +55,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PersonRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -68,13 +69,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ToolbarModule.cs" />
-    <Compile Include="ViewModels\IToolbarViewModel.cs" />
-    <Compile Include="ViewModels\ToolbarViewModel.cs" />
-    <Compile Include="Views\IToolbarView.cs" />
-    <Compile Include="Views\ToolBarView.xaml.cs">
-      <DependentUpon>ToolBarView.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ServiceModule.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -85,18 +80,18 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Src\PrimsDemoApplication.Infrastructure\PrimsDemoApplication.Infrastructure.csproj">
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\PrismDemoApplication.Business\PrismDemoApplication.Business.csproj">
+      <Project>{2d33c4de-fad0-43d7-a4e6-a677a2fab91f}</Project>
+      <Name>PrismDemoApplication.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PrimsDemoApplication.Infrastructure\PrimsDemoApplication.Infrastructure.csproj">
       <Project>{32d01ea7-959e-4f8a-b634-ca2e3b3424dc}</Project>
       <Name>PrimsDemoApplication.Infrastructure</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Views\ToolBarView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

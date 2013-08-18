@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Events;
 using PeopleModule.Views;
@@ -15,27 +16,26 @@ namespace PeopleModule.ViewModel
     public class PersonViewModel : ViewModelBase, IPersonViewModel
     {
         private IEventAggregator _eventAggregator;
+        private IPersonRepository _personRepository;
+        
 
-        public string ViewName
-        {
-            get
-            {
-                return string.Format("{0}, {1}", Person.FirstName, Person.LastName);
-            }
-        }
 
-        public DelegateCommand SaveCommand { get; set; }
+        #region Constructors
 
-        public PersonViewModel(IPersonView view, IEventAggregator eventAggregator)
+        public PersonViewModel(IPersonView view, IEventAggregator eventAggregator, IPersonRepository personRepository)
             : base(view)
         {
-
+            _personRepository = personRepository;
             SaveCommand = new DelegateCommand(Save, CanSave);
-
             GlobalCommands.SaveAllCommand.RegisterCommand(SaveCommand);
-
             _eventAggregator = eventAggregator;
         }
+
+        #endregion
+
+        #region Commands
+        
+        public DelegateCommand SaveCommand { get; set; }
 
         private bool CanSave()
         {
@@ -44,8 +44,23 @@ namespace PeopleModule.ViewModel
 
         private void Save()
         {
-            Person.LastUpdated = DateTime.Now;
+            //Person.LastUpdated = DateTime.Now;
+
+            int count = _personRepository.SavePerson(Person);
             _eventAggregator.GetEvent<PersonUpdatedEvent>().Publish(string.Format("{0}, {1}", Person.FirstName, Person.LastName));
+            MessageBox.Show(count.ToString());
+        }
+
+        #endregion
+
+        #region Properties
+
+        public string ViewName
+        {
+            get
+            {
+                return string.Format("{0}, {1}", Person.FirstName, Person.LastName);
+            }
         }
 
         private Person _person;
@@ -64,10 +79,18 @@ namespace PeopleModule.ViewModel
             }
         }
 
+        #endregion
+
+        #region Event Handlers
+
         private void PersonOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
         {
             SaveCommand.RaiseCanExecuteChanged();
         }
+
+        #endregion
+
+        #region Methods
 
         public void CreatePerson(string firstName, string lastName)
         {
@@ -79,6 +102,7 @@ namespace PeopleModule.ViewModel
             };
         }
 
+        #endregion
 
     }
 }
