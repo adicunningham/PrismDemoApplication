@@ -10,5 +10,6 @@ namespace PrimsDemoApplication.Infrastructure
     {
         public static string ToolbarRegion = "ToolbarRegion";
         public static string ContentRegion = "ContentRegion";
+        public static string StatusBarRegion = "StatusBarRegion";
     }
 }

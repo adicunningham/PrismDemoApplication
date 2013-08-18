@@ -4,18 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B7A3B0BF-A3C3-408F-83FE-71FF2470CE02}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{36487D97-68BF-4652-805E-F0DEBEC644A9}</ProjectGuid>
+    <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PrismDemoApplication</RootNamespace>
-    <AssemblyName>PrismDemoApplication</AssemblyName>
+    <RootNamespace>PeopleModule</RootNamespace>
+    <AssemblyName>PeopleModule</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -36,15 +34,11 @@
   <ItemGroup>
     <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Prism.UnityExtensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+      <HintPath>..\..\..\Lib\Microsoft.Practices.Prism.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+      <HintPath>..\..\..\Lib\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -61,24 +55,13 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="PeopleModule.cs" />
+    <Compile Include="ViewModel\IPersonViewModel.cs" />
+    <Compile Include="ViewModel\PersonViewModel.cs" />
+    <Compile Include="Views\IPersonView.cs" />
+    <Compile Include="Views\PersonView.xaml.cs">
+      <DependentUpon>PersonView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Controls\AnimatedTabControl.Desktop.cs" />
-    <Compile Include="Controls\ResearchControl.cs" />
-    <Compile Include="Controls\RoundedBox.xaml.cs" />
-    <Compile Include="Resources\ResourceNames.cs" />
-    <Compile Include="Shell.xaml.cs">
-      <DependentUpon>Shell.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -103,52 +86,25 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\XamlCatalog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Resource>
-    <Page Include="Controls\RoundedBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resources\Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resources\TabItemResource.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resources\WindowRegionResource.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Shell.xaml">
+    <Page Include="Views\PersonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PrimsDemoApplication.Infrastructure\PrimsDemoApplication.Infrastructure.csproj">
+    <ProjectReference Include="..\..\Business\PrismDemoApplication.Business\PrismDemoApplication.Business.csproj">
+      <Project>{2d33c4de-fad0-43d7-a4e6-a677a2fab91f}</Project>
+      <Name>PrismDemoApplication.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PrimsDemoApplication.Infrastructure\PrimsDemoApplication.Infrastructure.csproj">
       <Project>{32d01ea7-959e-4f8a-b634-ca2e3b3424dc}</Project>
       <Name>PrimsDemoApplication.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\background.png" />
-    <Resource Include="Resources\shadow_b.png" />
-    <Resource Include="Resources\shadow_bl.png" />
-    <Resource Include="Resources\shadow_br.png" />
-    <Resource Include="Resources\shadow_l.png" />
-    <Resource Include="Resources\shadow_r.png" />
-    <Resource Include="Resources\shadow_t.png" />
-    <Resource Include="Resources\shadow_tl.png" />
-    <Resource Include="Resources\shadow_tr.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.*" "$(SolutionDir)Src\PrismDemoApplication\bin\$(ConfigurationName)\Modules\" /Y</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

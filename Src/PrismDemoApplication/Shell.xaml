@@ -7,7 +7,15 @@
     <Grid>
         <DockPanel LastChildFill="true">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" prism:RegionManager.RegionName="{x:Static inf:RegionNames.ToolbarRegion}"/>
-            <ContentControl  Name="ContentRegion" prism:RegionManager.RegionName="{x:Static inf:RegionNames.ContentRegion}"/>
+            <ContentControl Name="StatusBarRegion" prism:RegionManager.RegionName="{x:Static inf:RegionNames.StatusBarRegion}"/>
+            <TabControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.ContentRegion}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TabControl.ItemContainerStyle>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Header" Value="{Binding Content.DataContext.ViewName, RelativeSource={RelativeSource Self}}"/>
+                    </Style>
+                </TabControl.ItemContainerStyle>
+                
+            </TabControl>
         </DockPanel>
         
     </Grid>
