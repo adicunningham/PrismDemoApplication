@@ -12,31 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Microsoft.Practices.Prism;
-using Microsoft.Practices.Prism.Regions;
-using PeopleModule.ViewModel;
-using PeopleModule.Views;
 using PrimsDemoApplication.Infrastructure;
-using PrismDemoApplication.Business;
 
-namespace PeopleModule
+namespace PeopleModule.Views
 {
     /// <summary>
-    /// Interaction logic for PersonView.xaml
+    /// Interaction logic for PeopleView.xaml
     /// </summary>
-    public partial class PersonView : UserControl, IPersonView
+    public partial class PeopleView : UserControl, IPeopleView
     {
-        public PersonView()
+        public PeopleView()
         {
             InitializeComponent();
-
-
-            RegionContext.GetObservableContext(this).PropertyChanged += (s, e) =>
-            {
-                var context = (ObservableObject<object>) s;
-                var selectedPerson = (Person) context.Value;
-                (ViewModel as IPersonViewModel).SelectedPerson = selectedPerson;
-            };
         }
 
         public PrimsDemoApplication.Infrastructure.IViewModel ViewModel

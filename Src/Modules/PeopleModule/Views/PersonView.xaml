@@ -43,19 +43,19 @@
 
         <!-- First Name -->
         <TextBlock Text="First Name:" Grid.Row="0"  Grid.Column="0" Margin="5"/>
-        <TextBox x:Name="TxtFirstName" Text="{Binding Person.FirstName, Mode=TwoWay, ValidatesOnDataErrors=True}" Grid.Row="0"  Grid.Column="1" Margin="5"/>
+        <TextBox x:Name="TxtFirstName" Text="{Binding SelectedPerson.FirstName, Mode=TwoWay, ValidatesOnDataErrors=True}" Grid.Row="0"  Grid.Column="1" Margin="5"/>
         
         <!-- Last Name -->
         <TextBlock Text="Last Name:" Grid.Row="1"  Grid.Column="0" Margin="5"/>
-        <TextBox x:Name="TxtLastName"  Text="{Binding Person.LastName, Mode=TwoWay, ValidatesOnDataErrors=True}" Grid.Row="1" Grid.Column="1" Margin="5"/>
+        <TextBox x:Name="TxtLastName"  Text="{Binding SelectedPerson.LastName, Mode=TwoWay, ValidatesOnDataErrors=True}" Grid.Row="1" Grid.Column="1" Margin="5"/>
         
         <!-- Age -->
         <TextBlock Text="Age:" Grid.Row="2"  Grid.Column="0" Margin="5"/>
-        <TextBox x:Name="TxtAge" Text="{Binding Person.Age, Mode=TwoWay, ValidatesOnDataErrors=True}"  Grid.Row="2" Grid.Column="1" Margin="5"/>
+        <TextBox x:Name="TxtAge" Text="{Binding SelectedPerson.Age, Mode=TwoWay, ValidatesOnDataErrors=True}"  Grid.Row="2" Grid.Column="1" Margin="5"/>
         
         <!-- Last Updated -->
         <TextBlock Text="Last Updated: " Grid.Row="3" Grid.Column="0" Margin="5"/>
-        <TextBlock x:Name="TbLastUpdated" Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding Person.LastUpdated}"/>
+        <TextBlock x:Name="TbLastUpdated" Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding SelectedPerson.LastUpdated}"/>
         
         <!-- Save -->
         <Button x:Name="ButSave" Content="Save" Grid.Row="4" Grid.ColumnSpan="2" Width="80" Margin="10" Command="{Binding SaveCommand}" CommandParameter="{Binding Person}"/>

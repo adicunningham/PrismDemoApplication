@@ -29,26 +29,42 @@ namespace PeopleModule
 
             IRegion region = _regionManager.Regions[RegionNames.ContentRegion];
             
-            var vm = _container.Resolve<IPersonViewModel>();
-            vm.CreatePerson("Adrian", "Cunningham");
+            
+            // Pre-Region Context examples
 
+            //var vm = _container.Resolve<IPersonViewModel>();
+            //vm.CreatePerson("Adrian", "Cunningham");
+
+            //region.Add(vm.View);
+            //region.Activate(vm.View);
+
+
+            //var vm2 = _container.Resolve<IPersonViewModel>();
+            //vm2.CreatePerson("Victoria", "Cunningham");
+            //region.Add(vm2.View);
+
+            //var vm3 = _container.Resolve<IPersonViewModel>();
+            //vm3.CreatePerson("Patrick", "Dill");
+            //region.Add(vm3.View);
+
+            var vm = _container.Resolve<IPeopleViewModel>();
             region.Add(vm.View);
+
+            var personDetailsRegion = _regionManager.Regions[RegionNames.PersonDetailsRegion];
+            var pvm = _container.Resolve<IPersonViewModel>();
+            personDetailsRegion.Add(pvm.View);
+
+
             region.Activate(vm.View);
 
-
-            var vm2 = _container.Resolve<IPersonViewModel>();
-            vm2.CreatePerson("Victoria", "Cunningham");
-            region.Add(vm2.View);
-
-            var vm3 = _container.Resolve<IPersonViewModel>();
-            vm3.CreatePerson("Patrick", "Dill");
-            region.Add(vm3.View);
         }
 
         public void RegisterViewsAndServices()
         {
             _container.RegisterType<IPersonViewModel, PersonViewModel>();
             _container.RegisterType<IPersonView, PersonView>();
+            _container.RegisterType<IPeopleView, PeopleView>();
+            _container.RegisterType<IPeopleViewModel, PeopleViewModel>();
         }
     }
 }

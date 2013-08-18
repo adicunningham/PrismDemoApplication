@@ -57,8 +57,14 @@
   <ItemGroup>
     <Compile Include="PeopleModule.cs" />
     <Compile Include="ViewModel\IPersonViewModel.cs" />
+    <Compile Include="ViewModel\PeopleViewModel.cs" />
     <Compile Include="ViewModel\PersonViewModel.cs" />
+    <Compile Include="Views\IPeopleView.cs" />
+    <Compile Include="ViewModel\IPeopleViewModel.cs" />
     <Compile Include="Views\IPersonView.cs" />
+    <Compile Include="Views\PeopleView.xaml.cs">
+      <DependentUpon>PeopleView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PersonView.xaml.cs">
       <DependentUpon>PersonView.xaml</DependentUpon>
     </Compile>
@@ -86,6 +92,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\PeopleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PersonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

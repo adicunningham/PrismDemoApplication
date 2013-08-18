@@ -79,6 +79,20 @@ namespace PeopleModule.ViewModel
             }
         }
 
+        private Person _selectedPerson;
+        public Person SelectedPerson
+        {
+            get
+            {
+                return _selectedPerson;
+            }
+            set
+            {
+                _selectedPerson = value;
+                OnPropertyChanged("SelectedPerson");
+            }
+        }
+
         #endregion
 
         #region Event Handlers
@@ -103,6 +117,9 @@ namespace PeopleModule.ViewModel
         }
 
         #endregion
+
+
+
 
     }
 }
